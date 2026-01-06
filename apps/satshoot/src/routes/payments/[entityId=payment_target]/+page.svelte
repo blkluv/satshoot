@@ -574,7 +574,7 @@
                                     class="font-[500] flex gap-x-2 items-center"
                                     for="platform-contribution"
                                 >
-                                    <span>SatShoot share</span>
+                                    <span>RFP.AUCTION share</span>
                                 </label>
                                 <Input
                                     id="plattform-contribution"

@@ -3,7 +3,7 @@ A freelance app for freedom-lovers, using nostr
 
 Try it live on:
 ```
-https://satshoot.com
+https://rfp.auction
 ```
 
 ## Benefits

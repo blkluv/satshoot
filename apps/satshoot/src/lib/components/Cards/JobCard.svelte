@@ -26,7 +26,7 @@
     }
 
     const shareJob = () => {
-        const shareURL = `https://satshoot.com/${job.encode()}`;
+        const shareURL = `https://rfp.auction/${job.encode()}`;
         navigator.clipboard.writeText(shareURL).then(() =>
             toaster.success({
                 title: 'Service Link Copied!',
@@ -68,12 +68,12 @@
         {/if}
         <a
             title="Publication Source"
-            href="https://satshoot.com/"
+            href="https://rfp.auction/"
             target="_blank"
             class={statusRowItemClasses}
         >
             <i class="bx bx-globe"></i>
-            satshoot.com
+            rfp.auction
         </a>
         <Button title="Options" onClick={handleOptionClick}>
             <i class="bx bx-dots-vertical-rounded"></i>

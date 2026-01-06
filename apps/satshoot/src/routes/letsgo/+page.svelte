@@ -32,10 +32,10 @@
     )
     let generatedNpub = $state('');
 
-    const filename = $derived(`SatShoot-${userName}-login.txt`)
+    const filename = $derived(`RFP.AUCTION-${userName}-login.txt`)
 
     const fileContent = $derived(`
-    # This is your SatShoot Nostr login configuration.
+    # This is your RFP.AUCTION Nostr login configuration.
     # It contains your nsec, npub and a few important bits.
 
     # This is your secret key
@@ -137,7 +137,7 @@
     let userNameTooltip =
         '<div>' +
             '<div class="font-bold">' + 
-            'This is how others will see you in SatShoot and Nostr. Learn more about ' + 
+            'This is how others will see you in RFP.AUCTION and Nostr. Learn more about ' + 
                 '<a class="anchor" target="_blank" href="https://nostr.how">Nostr.</a>' + 
             '</div>' +
         '</div>';
@@ -188,10 +188,10 @@
         />
     </div>
     <div class="w-full flex justify-center">
-        <h2 class="w-full h2 sm:h1 text-center">Welcome to SatShoot</h2>
+        <h2 class="w-full h2 sm:h1 text-center">Welcome to RFP.AUCTION</h2>
     </div>
     <div class="flex justify-center text-center h4 sm:h3">
-        Where individuals become unstoppable
+        Freelancers control RFP.AUCTION 
     </div>
     <div class="mt-4 text-xl sm:text-3xl text-center">
         <span>

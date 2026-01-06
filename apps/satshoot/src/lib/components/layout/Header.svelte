@@ -361,7 +361,7 @@
                                     alt="Satshoot logo"
                                     class="w-full max-w-[45px]"
                                 />
-                                <p class="max-[576px]:hidden">SatShoot</p>
+                                <p class="max-[576px]:hidden">RFP.AUCTION</p>
                             </a>
                         </div>
                         <div class="flex flex-row grow gap-4 justify-end items-center">

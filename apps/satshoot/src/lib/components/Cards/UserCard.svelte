@@ -197,7 +197,7 @@
     }
 
     function handleShare() {
-        const profileLink = `https://satshoot.com/${npub}/`;
+        const profileLink = `https://rfp.auction/${npub}/`;
         navigator.clipboard.writeText(profileLink).then(() =>
             toaster.success({
                 title: 'Porfile link copied!',
@@ -309,7 +309,7 @@
         '<div>' +
             '<div class="font-bold">' + 
             `<p>This user is ${trusted ? '' : 'NOT'} part of your Nostr Web of Trust.</p>` +
-            '<p>Learn more about how SatShoot revolutionizes the Trust model in Freelance in ' + 
+            '<p>Learn more about how RFP.AUCTION revolutionizes the Trust model in Freelance in ' + 
                 '<a class="anchor" target="_blank" href="https://primal.net/a/naddr1qvzqqqr4gupzp5zweue6xqa9npf0md5pak95zgsph2za35sentk88jmzdqwk925sqq2kx3m4v3jhxjec2emhxkr8wyknyuzx2c6hsuza8ux">this article</a></p>' + 
             '</div>' +
         '</div>'

@@ -75,7 +75,7 @@
 
             decryptedDM = decrypted
                 .split('\n')
-                .filter((line) => !line.startsWith('Reply to this message in SatShoot'))
+                .filter((line) => !line.startsWith('Reply to this message in RFP.AUCTION'))
                 .join('\n');
         } catch (e) {
             console.trace(e);

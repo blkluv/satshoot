@@ -627,9 +627,9 @@
 
     const pledgeTooltip =
         '<div>' +
-        '<div class="font-bold">Pledge Your support for SatShoot development!❤️‍🔥 ⚡</div>' +
+        '<div class="font-bold">Pledge Your support for RFP.AUCTION development!❤️‍🔥 ⚡</div>' +
         '<ul class="list-inside list-disc space-y-2">' +
-        '<li>A small piece of your pie will be paid to SatShoot by the Client</li>' +
+        '<li>A small piece of your pie will be paid to RFP.AUCTION by the Client</li>' +
         '<li>' +
         'Pledges appear on Services' +
         '</li>' +
@@ -659,7 +659,7 @@
     const shareServiceTooltip =
         '<div>' +
         '<div class="">' +
-        'When you share on Nostr, SatShoot will re-share your post, so ' +
+        'When you share on Nostr, RFP.AUCTION will re-share your post, so ' +
         'more people will see it.' +
         '</div>' +
         '</div>';
@@ -989,7 +989,7 @@
                             />
                         </div>
                         <div class="w-full flex justify-center">
-                            <h2 class="w-full h2 sm:h1 text-center">Welcome to SatShoot</h2>
+                            <h2 class="w-full h2 sm:h1 text-center">Welcome to RFP.AUCTION</h2>
                         </div>
                         <div class="flex justify-center text-center h4 sm:h3">
                             Where individuals become unstoppable
@@ -1066,7 +1066,7 @@
                                     <div class="flex gap-x-1 items-center">
                                         <CopyButton
                                             buttonText={'Copy Link'}
-                                            text={`https://satshoot.com/${service!.encode()}`}
+                                            text={`https://rfp.auction/${service!.encode()}`}
                                             feedbackMessage={'Link Copied!'}
                                         ></CopyButton>
                                         <QuestionIcon
@@ -1180,7 +1180,7 @@
     firstTimerMessageTitle={!firstService
         ? ''
         : "I've just published my service offering on the free market.\n" +
-          'SatShoot helped me take the first step towards becoming Unstoppable! ⚡'}
+          'RFP.AUCTION helped me take the first step towards becoming Unstoppable! ⚡'}
     bind:isOpen={showShareModal}
     eventObj={service!}
 />

@@ -51,7 +51,7 @@
             decryptedDM = await ($ndk.signer as NDKSigner).decrypt(peerUser, notification.content);
             decryptedDM = decryptedDM
                 .split('\n')
-                .filter((line) => !line.startsWith('Reply to this message in SatShoot'))
+                .filter((line) => !line.startsWith('Reply to this message in RFP.AUCTION'))
                 .join('\n');
         } catch (e) {
             console.trace(e);

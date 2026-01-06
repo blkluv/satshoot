@@ -33,7 +33,7 @@
 
     const popUpText = `
 <p>
-  SatShoot is built on Nostr, which has its own unique way of account creation
+  RFP.AUCTION is built on Nostr, which has its own unique way of account creation
   and login
 </p>
 
@@ -46,7 +46,7 @@
 </p>
 <p class="text-sm">
   In the case of
-  <strong> SatShoot </strong>
+  <strong> RFP.AUCTION </strong>
   , these actions include:
 </p>
 <ul class="pl-5 list-disc text-sm">

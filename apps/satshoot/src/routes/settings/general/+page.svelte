@@ -67,11 +67,11 @@
 
     let wotTooltip =
         '<div>' +
-        'Add trusted people from SatShoot nostr account to your Web of Trust. ' +
+        'Add trusted people from RFP.AUCTION nostr account to your Web of Trust. ' +
         'This helps users with low number of follows to have a broader ' +
         'view of the network but <strong>you still need to get people to follow ' +
         'You to BE seen by OTHERS</strong>. And of course, you trust ' +
-        'people that SatShoot trusts which has tradeoffs.' +
+        'people that RFP.AUCTION trusts which has tradeoffs.' +
         '</div>';
 </script>
 
@@ -110,7 +110,7 @@
         <div class="w-full flex flex-row gap-[10px] items-center">
             <div class="flex flex-row gap-2 grow-1">
                 <label class="font-[500]" for="attach-satshoot-wot">
-                    Attach SatShoot Web of Trust
+                    Attach RFP.AUCTION Web of Trust
                 </label>
                 <QuestionIcon
                     extraClasses="w-6 h-6 text-lg *:pointer-events-none text-center"

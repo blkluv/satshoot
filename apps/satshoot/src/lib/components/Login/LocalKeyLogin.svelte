@@ -281,7 +281,7 @@
                 name="nsec_backup"
                 accept="text/*"
                 maxFiles={1}
-                subtext={'SatShoot-<User name>-login.txt'}
+                subtext={'RFP.AUCTION-<User name>-login.txt'}
                 classes={'mb-2'}
                 validate={validateBackupFile}
                 onFileAccept={handleFileAccept}

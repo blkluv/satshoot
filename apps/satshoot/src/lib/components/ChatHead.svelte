@@ -83,7 +83,7 @@
             if (decryptedMessage) {
                 decryptedMessage = decryptedMessage
                     .split('\n')
-                    .filter((line) => !line.startsWith('Reply to this message in SatShoot'))
+                    .filter((line) => !line.startsWith('Reply to this message in RFP.AUCTION'))
                     .join('\n');
 
                 latestMessage =

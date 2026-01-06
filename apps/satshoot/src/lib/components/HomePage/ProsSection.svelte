@@ -3,13 +3,13 @@
         {
             icon: 'bxs-star',
             title: 'Unstoppable Reputation',
-            description: 'SatShoot can never delete your data or censor you.',
+            description: 'RFP.AUCTION can never delete your data or censor you.',
             hoverText: 'Your identity and data is portable across the Nostr app-universe.',
         },
         {
             icon: 'bxs-lock',
             title: 'User Control',
-            description: 'SatShoot cannot stop You from getting a deal.',
+            description: 'RFP.AUCTION cannot stop You from getting a deal.',
             hoverText: 'You can switch to another app at any time you like.',
         },
         {

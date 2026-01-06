@@ -54,7 +54,7 @@
     }
 
     const shareService = () => {
-        const shareURL = `https://satshoot.com/${service.encode()}`;
+        const shareURL = `https://rfp.auction/${service.encode()}`;
         navigator.clipboard.writeText(shareURL).then(() =>
             toaster.success({
                 title: 'Service Link Copied!',

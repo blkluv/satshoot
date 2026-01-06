@@ -31,7 +31,7 @@
     }: Props = $props();
 
     const naddr = $derived(eventObj?.encode() ?? '')
-    let shareURL = $derived(`https://satshoot.com/${naddr}`);
+    let shareURL = $derived(`https://rfp.auction/${naddr}`);
     const shareNaddr = $derived(`nostr:${naddr}`);
 
     let message = $state('');
@@ -105,20 +105,20 @@
         if (type === EventType.Service) {
             const title = firstTimerMessageTitle
                 ? firstTimerMessageTitle
-                : `Check out this service I'm offering on Satshoot! ⚡`
+                : `Check out this service I'm offering on RFP.AUCTION! ⚡`
             newMessage += `${title}\n\n`;
             newMessage += `## ${eventObj.title}\n\n`;
             newMessage += `${eventObj.description}\n\n`;
             newMessage += `Reach out, or place an order here:\n\n`;
             newMessage += `${shareURL}\n\n`;
-            newMessage += `#satshoot #nostrservice #freelance`;
+            newMessage += `#rfpauction #nostrservice #freelance`;
         } else {
             newMessage = `Hey Nostr,\nPlease help me with this issue and I can pay sats for your time:\n\n`;
             newMessage += `## ${eventObj.title}\n\n`;
             newMessage += `${eventObj.description}\n\n`;
             newMessage += `Make a bid on this URL:\n\n`;
             newMessage += `${shareURL}\n\n`;
-            newMessage += `#satshoot #asknostr`;
+            newMessage += `#rfpauction #asknostr`;
         }
         if (eventObj.tTags) {
             eventObj.tTags.forEach((tag: NDKTag) => {

@@ -115,7 +115,7 @@ export class MessageService {
             const url = new URL('/messages/' + this.encodedAddress, window.location.origin);
             url.searchParams.append(SELECTED_QUERY_PARAM, currentUser.pubkey);
 
-            content += `\nReply to this message in SatShoot: ${url.toString()}`;
+            content += `\nReply to this message in RFP.AUCTION: ${url.toString()}`;
         }
 
         const dm = new NDKEvent(ndkInstance);

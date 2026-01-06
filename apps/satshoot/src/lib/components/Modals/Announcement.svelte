@@ -24,7 +24,7 @@
         }
     });
 
-    let messageResult = $state('Ready to Work!\nGo to https://satshoot.com/post-job/');
+    let messageResult = $state('Ready to Work!\nGo to https://rfp.auction/post-job/');
     messageResult += ' and post your issues in these topics:\n';
     messageResult += '\n\n\n #satshoot #freelancing';
 

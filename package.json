@@ -1,5 +1,5 @@
 {
-  "name": "satshoot",
+  "name": "rfpauction",
   "private": true,
   "scripts": {
     "build": "./ndk_compile.sh && turbo run build",

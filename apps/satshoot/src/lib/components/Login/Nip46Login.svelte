@@ -192,10 +192,10 @@
                 NOSTRCONNECTRELAYURLS[0], // Use first relay
                 undefined, // Generate new local signer
                 {
-                    name: 'SatShoot',
+                    name: 'RFP.AUCTION', // Application name
                     url: window.location.origin,
                     perms: nip46SignerPerms.join(','),
-                    image: 'https://satshoot.com/img/satshoot.svg',
+                    image: 'https://rfp.auction/img/satshoot.svg',
                 }
             );
 

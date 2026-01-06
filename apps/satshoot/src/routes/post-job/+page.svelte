@@ -363,7 +363,7 @@
     const shareJobTooltip =
         '<div>' +
         '<div class="">' +
-        'When you share on Nostr, SatShoot will re-share your post, so ' +
+        'When you share on Nostr, RFP.AUCTION will re-share your post, so ' +
         'more people will see it.' +
         '</div>' +
         '</div>';
@@ -393,10 +393,10 @@
                             />
                         </div>
                         <div class="w-full flex justify-center">
-                            <h2 class="w-full h2 sm:h1 text-center">Welcome to SatShoot</h2>
+                            <h2 class="w-full h2 sm:h1 text-center">Welcome to RFP.AUCTION</h2>
                         </div>
                         <div class="flex justify-center text-center h4 sm:h3">
-                            Where individuals become unstoppable
+                            Freelancers control RFP.AUCTION
                         </div>
                         <div
                             class="flex flex-col items-center mt-4 text-xl sm:text-3xl text-center"
@@ -555,7 +555,7 @@
                                     <div class="flex gap-x-1 items-center">
                                         <CopyButton
                                             buttonText={'Copy Link'}
-                                            text={`https://satshoot.com/${job!.encode()}`}
+                                            text={`https://rfp.auction/${job!.encode()}`}
                                             feedbackMessage={'Link Copied!'}
                                         ></CopyButton>
                                         <QuestionIcon
