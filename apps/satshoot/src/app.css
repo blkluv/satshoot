@@ -3,7 +3,6 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 
-
 @import '@skeletonlabs/skeleton';
 @import '@skeletonlabs/skeleton/optional/presets';
 @import '@skeletonlabs/skeleton/themes/wintry';
@@ -12,71 +11,60 @@
 
 @custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
 
+/* =========
+   BRAND THEME
+   ========= */
 @theme {
     --font-*: initial;
-    --font-sans: ;
+    --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu;
 
     --color-transparent: rgba(0, 0, 0, 0);
 
-    --color-black-50: rgba(0, 0, 0, 0.05);
-    --color-black-100: rgba(0, 0, 0, 0.1);
-    --color-black-200: rgba(0, 0, 0, 0.2);
-    --color-black-300: rgba(0, 0, 0, 0.3);
-    --color-black-400: rgba(0, 0, 0, 0.4);
-    --color-black-500: rgba(0, 0, 0, 0.5);
-    --color-black-600: rgba(0, 0, 0, 0.6);
-    --color-black-700: rgba(0, 0, 0, 0.75);
-    --color-black: rgba(0, 0, 0);
+    /* Primary — Indeed-style blue */
+    --color-primary-50:  #eef3ff;
+    --color-primary-100: #dae6ff;
+    --color-primary-200: #b7ceff;
+    --color-primary-300: #8fb2ff;
+    --color-primary-400: #5f8fff;
+    --color-primary-500: #316cff; /* Main UI blue */
+    --color-primary-600: #1f55f0;
+    --color-primary-700: #1744c2;
 
-    --color-blue-0: rgba(59, 115, 246, 0);
-    --color-blue-500: rgba(84, 69, 255, 1);
-    --color-blue-600: rgba(99, 106, 255, 1);
+    /* RFP.AUCTION Gradient Accent */
+    --brand-gradient: linear-gradient(
+        90deg,
+        #ff4d67 0%,
+        #b053ff 40%,
+        #3b8bff 100%
+    );
 
+    /* Surface + Background */
+    --color-surface: #ffffff;
+    --color-surface-muted: #f7f9fc;
 
-    --color-purple-0: rgba(128, 0, 128, 0);
-    --color-purple-600: rgba(138, 71, 210, 1);
+    /* Soft Neutrals (Modern SaaS) */
+    --color-gray-50:  #f5f7fa;
+    --color-gray-100: #eceff3;
+    --color-gray-200: #d8dde5;
+    --color-gray-300: #c3cad6;
+    --color-gray-400: #9aa4b2;
+    --color-gray-500: #707b8c;
+    --color-gray-600: #4e5668;
+    --color-gray-700: #3b4150;
+    --color-gray-800: #252a34;
 
-    --color-white-0: rgba(255, 255, 255, 0);
-    --color-white-50: rgba(255, 255, 255, 0.05);
-    --color-white-100: rgba(255, 255, 255, 0.1);
-    --color-white-200: rgba(255, 255, 255, 0.2);
-    --color-white-300: rgba(255, 255, 255, 0.3);
-    --color-white-400: rgba(255, 255, 255, 0.4);
-    --color-white-500: rgba(255, 255, 255, 0.5);
-    --color-white-700: rgba(255, 255, 255, 0.7);
-    --color-white-800: rgba(255, 255, 255, 0.8);
-    --color-white: rgba(255, 255, 255, 1);
+    /* Feedback Colors */
+    --color-success: #1fc77a;
+    --color-warning: #ffb526;
+    --color-danger:  #ff5f5f;
 
-    --color-green-100: rgba(225, 255, 225, 0.1);
-    --color-green-500: rgba(225, 255, 225, 0.75);
-    --color-green-600: rgba(95, 255, 95, 0.75);
-
-    --color-orange-500: rgba(255, 99, 71, 0.75);
-    --color-orange-600: rgba(255, 99, 71, 1);
-
-    --color-yellow-500: rgba(255, 173, 49, 1);
-    --color-yellow-600: rgba(255, 199, 54, 1);
-
-    --color-gray-500: rgba(99, 99, 99, 1);
-    --color-gray-600: rgba(220, 220, 220, 1);
-
-    --color-brightGray-700: rgba(55, 65, 81, 0.75);
-    --color-brightGray: rgba(55, 65, 81, 1);
-
-    --shadow-soft: 0 0 8px rgba(0, 0, 0, 0.25);
-    --shadow-strong: 0 0 8px 4px rgba(0, 0, 0, 0.5);
-    --shadow-subtle: 0 0 4px rgba(0, 0, 0, 0.25);
-    --shadow-deep: 0 0 4px 2px rgba(0, 0, 0, 0.35);
+    /* Soft shadows = clean SaaS */
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
+    --shadow-strong: 0 16px 40px rgba(0, 0, 0, 0.12);
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* Tailwind v3 compatibility */
 @layer base {
     *,
     ::after,
@@ -87,20 +75,109 @@
     }
 }
 
+/* =========
+   TYPOGRAPHY
+   ========= */
 @font-face {
-    /* Reference name */
     font-family: 'Inter';
-    /* For multiple files use commas, ex: url(), url(), ... */
     src: url('/fonts/Inter-VariableFont_slnt,wght.ttf');
 }
 
 :root [data-theme='wintry'] {
     --theme-font-family-base: 'Inter', sans-serif;
     --theme-font-family-heading: 'Inter', sans-serif;
-    /* ... */
 }
 
+/* =========
+   GLOBAL
+   ========= */
 html,
 body {
     @apply h-full;
+    background: var(--color-surface-muted);
+    color: var(--color-gray-700);
+    font-family: var(--theme-font-family-base);
+}
+
+/* =========
+   UI ELEMENTS
+   ========= */
+
+/* Cards */
+.card {
+    background: var(--color-surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Primary Buttons */
+.button-primary {
+    background: var(--color-primary-500);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.button-primary:hover {
+    background: var(--color-primary-600);
+}
+
+/* Gradient CTA Buttons */
+.button-gradient {
+    background: var(--brand-gradient);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-strong);
+}
+
+/* Section Badges / Hero Accent */
+.hero-badge {
+    background: var(--brand-gradient);
+    color: #fff;
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-200);
+}
+
+/* Nav */
+.navbar {
+    background: #ffffff;
+    box-shadow: var(--shadow-subtle);
+}
+
+/* =========
+   DARK MODE
+   ========= */
+
+[data-mode="dark"] {
+    --color-surface: #111827;
+    --color-surface-muted: #0b0f16;
+
+    --color-gray-50:  #141824;
+    --color-gray-100: #1a2030;
+    --color-gray-200: #22293b;
+    --color-gray-300: #2d3549;
+    --color-gray-400: #48526a;
+    --color-gray-500: #6c7895;
+    --color-gray-600: #a7b1c9;
+
+    background: var(--color-surface-muted);
+    color: #e8ecff;
+}
+
+[data-mode="dark"] .card {
+    background: var(--color-gray-100);
+    box-shadow: none;
+}
+
+[data-mode="dark"] .button-primary {
+    background: var(--color-primary-400);
 }
