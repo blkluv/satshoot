@@ -1,7 +1,25 @@
 {
+  "builds": [
+    {
+      "src": "apps/satshoot/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/satshoot"
+    }
+  ],
   "build": {
     "env": {
-      "NODE_VERSION": "20"
+      "NODE_VERSION": "20",
+      "ENABLE_EXPERIMENTAL_COREPACK": "1",
+      "NODE_ENV": "production"
     }
-  }
+  },
+  "installCommand": "cd apps/satshoot && pnpm install --prod=false",
+  "buildCommand": "cd apps/satshoot && pnpm build",
+  "outputDirectory": "apps/satshoot/dist",
+  "framework": "sveltekit"
 }
