@@ -3,6 +3,7 @@
     import ndk from '$lib/stores/session';
     import currentUser from '$lib/stores/user';
     import { NDKEvent, NDKKind, type NDKTag } from '@nostr-dev-kit/ndk';
+    import { get } from 'svelte/store';
 
     import { tick } from 'svelte';
     import Button from '../UI/Buttons/Button.svelte';
@@ -30,6 +31,10 @@
         eventObj,
     }: Props = $props();
 
+    // Get stores - REMOVE $ prefix from variable names
+    const ndkStore = get(ndk);
+    const currentUserStore = get(currentUser);
+
     const naddr = $derived(eventObj?.encode() ?? '')
     let shareURL = $derived(`https://rfp.auction/${naddr}`);
     const shareNaddr = $derived(`nostr:${naddr}`);
@@ -39,7 +44,6 @@
 
     const type = $derived.by(() => {
         if (eventObj instanceof ServiceEvent) return EventType.Service;
-
         return EventType.Job;
     });
 
@@ -48,7 +52,7 @@
         posting = true;
         await tick();
 
-        const kind1Event = new NDKEvent($ndk);
+        const kind1Event = new NDKEvent(ndkStore); // Changed from $ndk to ndkStore
         kind1Event.kind = NDKKind.Text;
 
         kind1Event.content = message;
@@ -156,7 +160,7 @@
                         Share your job post with others
                     {/if}
                 </p>
-                <div class:hidden={eventObj.pubkey !== $currentUser?.pubkey}>
+                <div class:hidden={eventObj.pubkey !== currentUserStore?.pubkey}> <!-- Changed from $currentUser -->
                     <Input
                         bind:value={message}
                         classes="min-h-[100px]"
@@ -167,7 +171,7 @@
                 </div>
             </div>
             <div class="w-full flex flex-wrap gap-[5px]">
-                {#if eventObj.pubkey === $currentUser?.pubkey}
+                {#if eventObj.pubkey === currentUserStore?.pubkey} <!-- Changed from $currentUser -->
                     <Button grow onClick={postEvent} disabled={posting}>
                         {#if posting}
                             <span>

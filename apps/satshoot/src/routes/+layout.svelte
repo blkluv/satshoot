@@ -121,15 +121,42 @@
     let footerHeight = $state(0);
     let followSubscription = $state<NDKSubscription>();
 
-    let currentMode: string | null = null;
+    // Dark mode handling for landing page
+    let savedMode: string | null = null;
     $effect(() => {
-        if (page.url.pathname === '/') {
-            console.log('setting dark mode for LP');
-            currentMode = document.documentElement.getAttribute('data-mode');
+        // Only run on client side
+        if (typeof window === 'undefined') return;
+        
+        const isLandingPage = page.url.pathname === '/';
+        
+        if (isLandingPage) {
+            // Save current mode BEFORE changing it
+            savedMode = document.documentElement.getAttribute('data-mode') || 
+                        localStorage.getItem('theme') ||
+                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            
+            console.log('Landing page: forcing dark mode');
             document.documentElement.setAttribute('data-mode', 'dark');
-        } else if (currentMode) {
-            console.log('setting back mode to original');
-            document.documentElement.setAttribute('data-mode', currentMode);
+            document.documentElement.classList.add('dark');
+            
+            // Also update the store
+            setModeUserPrefers('dark');
+        } else if (savedMode) {
+            // Restore the saved mode when leaving landing page
+            console.log('Restoring saved mode:', savedMode);
+            document.documentElement.setAttribute('data-mode', savedMode);
+            
+            if (savedMode === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            
+            // Update store
+            setModeUserPrefers(savedMode);
+            
+            // Clear saved mode after restoring
+            savedMode = null;
         }
     });
 
@@ -422,12 +449,31 @@
 
     function configureBasics() {
         localStorage.debug = '*';
+        
+        // Get mode from user preference, but override for landing page
         const mode = getModeUserPrefers() || document.documentElement.getAttribute('data-mode');
+        
+        // Check if we're on landing page
+        const isLandingPage = page.url.pathname === '/';
+        
         if (!mode) {
-            setModeUserPrefers('dark');
-            document.documentElement.setAttribute('data-mode', 'dark');
-        } else if (page.url.pathname !== '/') {
+            // Default to dark if no mode set
+            const defaultMode = isLandingPage ? 'dark' : 'light';
+            setModeUserPrefers(defaultMode);
+            document.documentElement.setAttribute('data-mode', defaultMode);
+            if (defaultMode === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } else if (!isLandingPage) {
+            // Only apply saved mode if NOT on landing page
             document.documentElement.setAttribute('data-mode', mode);
+            if (mode === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } else {
+            // Force dark mode for landing page regardless of saved preference
+            document.documentElement.setAttribute('data-mode', 'dark');
+            document.documentElement.classList.add('dark');
         }
 
         // window.addEventListener('beforeinstallprompt', (e) => {
